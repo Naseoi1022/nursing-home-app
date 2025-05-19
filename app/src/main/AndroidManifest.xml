@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.nursinghome">
 
     <application
         android:allowBackup="true"
@@ -12,16 +14,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NursingHomeApp"
         tools:targetApi="31">
+
+        <!-- ① LoginActivity만 런처로 설정 -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.NursingHomeApp">
+            android:name=".ui.login.LoginActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <!-- ② MainActivity는 일반 액티비티로만 선언 -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.NursingHomeApp" />
+
+        <!-- 다른 액티비티들은 이 아래에 계속 추가 -->
+        <!--
+        <activity android:name=".ui.patient.PatientActivity" />
+        -->
+    </application>
 </manifest>
